@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/zenlike/template.xhtml">
+	
+		<ui:define name="TituloDaPagina"> Lista de Produtos Cadastrados</ui:define>
+		
+		<ui:define name="conteudo">
+		
+		<p:dataTable value="#{produtoBean.listarProduto()}" var="produto">
+		
+		<p:column headerText="Marca">
+			<p:outputLabel value="#{produto.marca.nome}"/>
+		</p:column>
+		
+		<p:column headerText="Nome do Produto">
+			<p:outputLabel value="#{produto.nome}"/>
+		</p:column>
+		
+		<p:column headerText="Preço">
+			<p:outputLabel value="#{produto.preco}"/>
+		</p:column>
+		
+		<p:column headerText="Ação">
+			<p:commandButton value="Excluir" action="#{produtoBean.excluirProduto(produto)}" update="@form"/>
+		</p:column>
+		
+		
+		</p:dataTable>
+		
+		
+		</ui:define>
+	
+	</ui:composition>
+</html>

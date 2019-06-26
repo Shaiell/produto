@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<title>Da 10 pra mim professor</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<ui:insert name="estilos">
+		<ui:include src="/zenlike/estilos.xhtml" />
+	</ui:insert>
+</h:head>
+<h:body>
+
+	<div id="upbg" />
+
+	<div id="outer">
+
+		<ui:insert name="header">
+			<ui:include src="/zenlike/header.xhtml" />
+		</ui:insert>
+
+
+		<ui:insert name="menu">
+			<ui:include src="/zenlike/menu.xhtml" />
+		</ui:insert>
+
+		<div id="menubottom" />
+
+		<div id="TituloDaPagina">
+			<h2>
+				<ui:insert name="TituloDaPagina">troque o titulo</ui:insert>
+			</h2>
+		</div>
+			<br />
+		<div class="conteudo">
+			<h:form id="form">
+				<div id="mensagens">
+					<ui:insert name="mensagens">
+						<p:messages globalOnly="true" autoUpdate="true" closable="true" />
+					</ui:insert>
+				</div>
+
+				<div id="principal">
+					<ui:insert name="conteudo">
+<!-- 				formulario -->
+			</ui:insert>
+				</div>
+				<br />
+				<div class="barraAcoes">
+					<ui:insert name="botoesAcao">
+<!-- 				botoes -->
+			</ui:insert>
+				</div>
+
+			</h:form>
+		</div>
+
+		<ui:insert name="footer">
+			<ui:include src="/zenlike/footer.xhtml" />
+		</ui:insert>
+	</div>
+</h:body>
+</html>

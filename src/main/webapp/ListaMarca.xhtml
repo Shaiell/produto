@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/zenlike/template.xhtml">
+	<ui:define name="TituloDaPagina">Lista de Marcas Cadastradas</ui:define>
+
+	<ui:define name="conteudo">
+
+		<p:dataTable value="#{marcaBean.listarMarcas()}" var="marca">
+
+			<p:column headerText="Nome">
+				<h:outputText value="#{marca.nome}" />
+			</p:column>
+
+			<p:column headerText="Descrição">
+				<h:outputText value="#{marca.descricao}" />
+			</p:column>
+
+			<p:column headerText="Ação" >
+				<p:commandButton value="Excluir"
+					action="#{marcaBean.excluirMarca(marca)}" update="@form" />
+			</p:column>
+
+		</p:dataTable>
+
+	</ui:define>
+
+</ui:composition>
+</html>
